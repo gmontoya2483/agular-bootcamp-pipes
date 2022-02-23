@@ -81,6 +81,36 @@
   {{ car | json }}
 
 
+  <div class="row">
+    <div class="col">
+      <label class="form-label" for="miles">Miles</label>
+      <input
+        class="form-control"
+        id="miles"
+        type="number"
+        (input)="onMilesChange($any($event.target).value)"
+      >
+    </div>
+    <div class="col">
+      <label><strong>kilometers</strong></label>
+      <div>
+        {{ miles | convert: 'km' }}
+      </div>
+
+      <label><strong>Meters</strong></label>
+      <div *ngIf="(miles | convert : 'km') > 10">
+        {{ miles | convert: 'm' }}
+      </div>
+
+      <label><strong>Centimeters</strong></label>
+      <div>
+        {{ miles | convert: 'cm' | number : '1.2-2'}}
+      </div>
+
+    </div>
+  </div>
+
+
 
 
 
