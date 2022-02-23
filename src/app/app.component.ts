@@ -6,5 +6,35 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'pipes';
+
+  name:   string | undefined;
+  date:   string | undefined;
+  amount: number | undefined
+  height: number | undefined
+
+  car = {
+    make: 'Chevrolet',
+    model: 'Cruze',
+    year: 2019
+  }
+
+
+
+  onNameChange(value: string) {
+    this.name = value;
+  }
+
+
+  onDateChange(value: string) {
+    this.date = value;
+  }
+
+  onAmountChange(value: string) {
+    this.amount = parseFloat(value);
+  }
+
+  onHeightChange(value: string) {
+    this.height = parseFloat(value);
+  }
+
 }
